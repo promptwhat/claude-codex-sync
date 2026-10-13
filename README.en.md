@@ -2,7 +2,7 @@
 
 <sub>[한국어 README](README.md)</sub>
 
-**Make Codex read the same skills and rules you already built for Claude Code.** Edit once, both tools see it.
+**Make Codex read the same skills and rules you already built for Claude.** Edit once, both tools see it.
 
 - **Skills**: linked, not copied. One copy on disk, so versions never drift.
 - **Rules**: `AGENTS.md` is the single source; `CLAUDE.md` imports it with one `@AGENTS.md` line.
@@ -10,7 +10,7 @@
 
 ![Same question to both apps, same answer](docs/same-answer.jpg)
 
-<sub>Real answers from Claude Code and Codex in a test project linked by this skill. Both found the skill that existed only on the Claude side and the one that existed only on the Codex side. (Screenshot text is Korean.)</sub>
+<sub>Real answers from Claude and Codex in a test project linked by this skill. Both found the skill that existed only on the Claude side and the one that existed only on the Codex side. (Screenshot text is Korean.)</sub>
 
 ## Download
 
@@ -18,7 +18,7 @@
 
 ## Install
 
-Easiest: send this to Claude Code.
+Easiest: send this to Claude.
 
 ```
 Install the skill at https://github.com/promptwhat/claude-codex-sync and link Claude and Codex
@@ -46,7 +46,7 @@ Same rule and same skill names from both means you are done.
 
 ## What gets linked
 
-| What | Claude Code reads | Codex reads | How |
+| What | Claude reads | Codex reads | How |
 |---|---|---|---|
 | Skills | `~/.claude/skills` | `~/.agents/skills` | symlink; the side with the real folder is the source |
 | Global rules | `~/.claude/CLAUDE.md` | `~/.codex/AGENTS.md` | `CLAUDE.md` imports `@~/.codex/AGENTS.md` |
@@ -57,7 +57,7 @@ Same rule and same skill names from both means you are done.
 
 - Model differences remain; Codex runs GPT models. This aligns skills and rules only.
 - Does not share chat history or memory, and does not hand work off between apps.
-- Not for claude.ai chat skills, cloud sessions, or desktop Cowork sessions.
+- Runs in Claude on your own computer (terminal, or the desktop app's Code tab). Not for claude.ai chat skills, cloud sessions, or desktop Cowork sessions.
 - macOS and Linux (incl. WSL) only.
 - Every case `check` flags (doc size limit, `AGENTS.override.md`, parent-folder rules, missing `name`/`description`, Claude-only tools, …) and its fix is listed in [SKILL.md](claude-codex-sync/SKILL.md) (Korean).
 
